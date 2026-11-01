@@ -1,4 +1,4 @@
-# 第 1 节验证记录
+# 第 1～2 节验证记录
 
 日期：2026-11-01。上游提交：`233d00fa068ec2b8c0d4f07b703934d6391a5a73`。
 
@@ -37,3 +37,27 @@ ALL CHECKS PASSED
 已完成：代码克隆、源码地图、7 天计划、第 1 节完整讲义、CPU 最小实验、分模块模拟面试题及答案、学习日志。
 
 未执行：Day 2～7 的实验、全量预训练/SFT、真实模型评估、格式转换和在线 Serving。它们是后续逐节学习任务，不能把第 1 节验证当作整个项目验证。
+
+## 第 2 节：Token Embedding
+
+2026-11-01，同一教学环境运行：
+
+```powershell
+.\.venv\Scripts\python.exe learning\experiments\02_embedding.py
+```
+
+退出码 0，stdout：
+
+```text
+IDs shape: (2, 3)
+embedding shape: (2, 3, 4)
+token 1 vector: [0.4000000059604645, 0.5, 0.6000000238418579, 0.699999988079071]
+lookup == indexing == one_hot @ weight: PASS
+embedding-only gradient rows: [1, 3]
+shared Parameter: True
+LM head probe shape: (1, 1, 6)
+LM-head CE gradient rows: [0, 1, 2, 3, 4, 5]
+ALL CHECKS PASSED
+```
+
+验证范围：真实 MiniMind 模型初始化与参数共享、查表/索引/one-hot 等价、相同 ID 输出相同、重复 ID 梯度累加、默认未指定 padding_idx、共享输出头路径向所有词表行传播梯度。未运行完整模型 Forward 或语言模型训练；未测 GPU/多卡性能。

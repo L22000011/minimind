@@ -8,6 +8,8 @@
 
 ## 2. Embedding
 
+本节完整讲义、注释源码和三道进阶检查题见 [第 2 节](02_Embedding.md)。
+
 **Q1：`nn.Embedding(V,D)` 与 one-hot 乘权重是否等价？哪种更适合实际执行？**
 
 答：对合法 token ID，其结果等价于 one-hot 行向量乘 [V,D] 表；查表不需要显式构造 [B,T,V] 的稀疏 one-hot，避免大量无用存储与计算。输入是整数 [B,T]，输出是浮点 [B,T,D]。

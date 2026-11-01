@@ -1,6 +1,6 @@
 ## 个人源码学习入口
 
-本 fork 保留 MiniMind 上游源码，并在 [`learning/README.md`](learning/README.md) 提供 7 天源码学习计划、[第一节 RMSNorm](learning/01_RMSNorm.md)、[面试风格题与答案](learning/INTERVIEW_BANK.md)及最小实验。
+本 fork 保留 MiniMind 上游源码，并在 [`learning/README.md`](learning/README.md) 提供 7 天源码学习计划、[第一节 RMSNorm](learning/01_RMSNorm.md)、[第二节 Token Embedding](learning/02_Embedding.md)、[面试风格题与答案](learning/INTERVIEW_BANK.md)及最小实验。
 
 ---
 
